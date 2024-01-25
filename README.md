@@ -4,6 +4,14 @@
 
 VRest is a Python library for making HTTP and WebSocket requests to RESTful and WebSocket-based APIs. It provides a flexible and easy-to-use interface for interacting with various APIs, allowing you to send requests and receive responses.
 
+## Problem Statement
+
+APIs are a common way to interact with web services and applications. However, they can be difficult to use, especially when they require complex authentication or use WebSocket connections. VRest simplifies API interaction by providing a clean and flexible interface for making HTTP and WebSocket requests.
+
+## Solution
+
+VRest provides a `RestAPI` class that you can use to interact with various APIs. It allows you to easily make HTTP and WebSocket requests and handle responses and errors. You can use it to communicate with RESTful and WebSocket-based APIs, including those that require complex authentication.
+
 ## Installation
 
 You can install VRest using poetry:
@@ -12,9 +20,63 @@ You can install VRest using poetry:
 poetry add git+https://github.com/Vortex5Root/VRest.git
 ```
 
-## Quick Start
+## Dependencies
 
-To get started with VRest, you need to create a `RestAPI` instance and define your API configuration, including the API endpoint, headers, and available functions. Here's a basic example using the Deepgram API:
+VRest has the following dependencies:
+
+- [python3.11.2](https://www.python.org/downloads/release/python-3112/)
+- [requests](https://pypi.org/project/requests/)
+- [websockets](https://pypi.org/project/websockets/)
+
+## Skeleton
+
+The API configuration includes a skeleton, which defines the available API functions. Each function has a name, suffix, and method. The name is used to call the function, the suffix is appended to the API endpoint, and the method is the HTTP method used to make the request. For example, the following skeleton defines a function named `function_name` that makes a GET request to the `endpoint_suffix` endpoint:
+
+```python
+"skeleton": {
+    "function_name": {
+        "suffix": "endpoint_suffix",
+        "method": "GET"
+    }
+}
+```
+
+You can add as many functions as needed to the skeleton. For example, the following skeleton defines two functions:
+
+```python
+"skeleton": {
+    "function_name_1": {
+        "suffix": "endpoint_suffix_1",
+        "method": "GET"
+    },
+    "function_name_2": {
+        "suffix": "endpoint_suffix_2",
+        "method": "POST"
+    }
+}
+```
+## RestAPI Structure
+
+The `RestAPI` config has the following structure:
+
+```python
+{
+    "end_point": "https://api.example.com/v1/",
+    "headers":{
+        "*Token_Var": "Token {}", # Use * as prefix to indicate the Token Var
+    },
+    "skeleton": {
+        "function_name": {
+            "suffix": "endpoint_suffix",
+            "method": "GET"
+        }
+    }
+}
+```
+
+## Examples
+
+Here's a basic example using the Deepgram API:
 
 ```python
 from vrest import RestAPI
@@ -25,7 +87,7 @@ deepgram_config = {
     "header": {
         "accept": "application/json",
         "content-type": "application/json",
-        "*Authorization": "Token {}"
+        "*Authorization": "Token {}" # Use * as prefix to indicate the Token Var
     },
     "skeleton": {
         "pre_recode": {
@@ -53,34 +115,6 @@ else:
     print(response.text)
 ```
 
-## Usage
-
-### Creating a RestAPI Instance
-
-To interact with an API, you need to create a `RestAPI` instance by providing the API configuration in a dictionary format. The configuration should include the API endpoint, headers, and skeleton (available API functions).
-
-```python
-api_config = {
-    "end_point": "https://api.example.com/v1/",
-    "header": {
-        "accept": "application/json",
-        "content-type": "application/json",
-        "*Authorization": "Token {}"
-    },
-    "skeleton": {
-        "function_name": {
-            "suffix": "endpoint_suffix",
-            "method": "GET"
-        }
-        # Add more functions as needed
-    }
-}
-
-# Create a RestAPI instance
-api = RestAPI(api_config, api_key="YOUR_API_KEY")
-```
-Note: use ´*´ as prefix to indicate the Token Var 
-
 ### Making API Requests
 
 Once you have created a `RestAPI` instance, you can make API requests using the defined functions. For example, to make a GET request to the `function_name` endpoint:
@@ -106,10 +140,6 @@ loop = asyncio.get_event_loop()
 loop.run_until_complete(start_websocket())
 ```
 
-### Audio Streaming Example
-
-The provided code includes an audio streaming example using PyAudio and WebSocket. It captures audio from a microphone, sends it to the Deepgram API for speech recognition, and receives the transcribed text. You can adapt this example for your specific use case.
-
 ## Error Handling
 
 VRest includes custom exceptions for handling common errors:
@@ -122,4 +152,4 @@ You can handle these exceptions in your code to gracefully manage errors.
 
 ## Conclusion
 
-VRest simplifies API interaction by providing a clean and flexible interface for making HTTP and WebSocket requests. You can use it to communicate with various APIs and easily handle responses and errors. Explore the library further and customize it to meet your specific needs.
+VRest is a Python library for making HTTP and WebSocket requests to RESTful and WebSocket-based APIs. It provides a flexible and easy-to-use interface for interacting with various APIs, allowing you to send requests and receive responses.
