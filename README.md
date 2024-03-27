@@ -9,19 +9,18 @@
 
 ## Index
 
-| Index |
-| ----- |
-| [Introduction](#introduction) |
-| [Installation](#installation) |
-| [Package Information](#package-information) |
-| [Requirements](#requirements) |
-| [Skeleton](#skeleton) |
-| [RestAPI Structure](#restapi-structure) |
-| [Examples](#examples) |
-| [Error Handling](#error-handling) |
-| [Conclusion](#conclusion) |
-| [License](#license) |
-| [Author](#author) |
+| Topics | SubTopic | 
+| ----- | ----- |
+| [VRest Project](#vrest-project) |  |
+|  └── | [Index](#index) |
+|  └── | [Introduction](#introduction) |
+|  └── | [Installation](#installation) |
+|  └── | [Package Information](#package-information) |
+|  └── | [Documentation](DOC.md) |
+|  └── | [License](#license) |
+|[Author](#author) | |
+
+
 
 ## Introduction
 
@@ -45,27 +44,16 @@ poetry add git+https://github.com/Vortex5Root/VRest.git
 | ------- | ------- | ------- | ------ |
 | VRest | 0.1.0 | MIT | >=3.6 |
 
-## Dependencies
-
-VRest has the following dependencies:
-
-- [python3.11.2](https://www.python.org/downloads/release/python-3112/)
-- [requests](https://pypi.org/project/requests/)
-- [websockets](https://pypi.org/project/websockets/)
 
 ## Documentation
 
 The documentation for VRest can be found [here](./DOCS.md).
 
-## Conclusion
-
-VRest is a Python library for making HTTP and WebSocket requests to RESTful and WebSocket-based APIs. It provides a flexible and easy-to-use interface for interacting with various APIs, allowing you to send requests and receive responses.
-
 ## License
 
 VRest is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more information.
 
-## Author
+# Author
 
 VRest is developed and maintained by Vortex5Root.
 
