@@ -134,3 +134,22 @@ VRest includes custom exceptions for handling common errors:
 - `TokenRequired`: Raised when an API request requires an authentication token.
 
 You can handle these exceptions in your code to gracefully manage errors.
+
+## Conclusion
+
+VRest is a Python library for making HTTP and WebSocket requests to RESTful and WebSocket-based APIs. It provides a flexible and easy-to-use interface for interacting with various APIs, allowing you to send requests and receive responses.
+
+## License
+
+VRest is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more information.
+
+## Author
+
+VRest is developed and maintained by Vortex5Root.
+
+<a href="https://github.com/Vortex5Root">
+    <div style="display: flex; justify-content: center; align-items: center; height: 100px; width: 300px;">
+        <img src=https://avatars.githubusercontent.com/u/102427260?v=4 width=50 style="border-radius: 50%;">
+        <a href="https://github.com/Vortex5Root">Vortex5Root {Full-Stack Engineer}</a>
+    </div>
+</a>
